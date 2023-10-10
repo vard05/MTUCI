@@ -14,17 +14,15 @@ class Article(BaseModel):
 @app.get("/article/{title}")
 def search_by_path(request: Request, title: str):
     
-    titleraw = None
     for title in title.split():
         if title != "":
-            titleraw = title
-    articles = 0
-    try:
-        data = wikipedia.summary(titleraw, sentences=4)
-    except wikipedia.exceptions.DisambiguationError as e:
-        data = e.options
+            try:
+                data = wikipedia.summary(title, sentences=4)
+            except wikipedia.exceptions.DisambiguationError as e:
+                data = e.options
+            return data, status.HTTP_200_OK
 
-    return data, status.HTTP_200_OK
+    return status.HTTP_500_INTERNAL_SERVER_ERROR
 
 # QUERY запрос
 
@@ -45,12 +43,10 @@ def search_by_query(query: Optional[str] = None):
 @app.post("/post_search/")
 def search_by_body(article: Article):
 
-    articles = 0
     try:
         data = wikipedia.summary(article, sentences=4)
     except wikipedia.exceptions.DisambiguationError as e:
-        data = e.options
-
+        return status.HTTP_500_INTERNAL_SERVER_ERROR
 
     return data, status.HTTP_200_OK
 
