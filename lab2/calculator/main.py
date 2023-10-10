@@ -1,8 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Request, status
 from pydantic import BaseModel
-from typing import Optional
-import math
 
 app = FastAPI()
 
