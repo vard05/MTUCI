@@ -1,11 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, Request, status
-from pydantic import BaseModel
 
 app = FastAPI()
-
-class Article(BaseModel):
-    title: str
 
 # PATH запрос
 
