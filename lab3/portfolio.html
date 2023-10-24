@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/swup@4"></script>
+    <script>
+    const swup = new Swup();
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+    <title>MTUCI Lab3</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="media/logo.svg" alt="">
+        </div>
+        <div class="calendar">
+            <div class="leftcolumn"></div>
+            <div class="date">
+                <div class="dayofweek">Понедельник</div>
+                <div class="fulldate">25.09</div>
+            </div>
+            <div class="navigation">
+                <div class="header"><a>Навигация</a></div>
+                <div id="m0" class="option" onclick="switchpage('main');">
+                    <img id="m1" hidden="true" src="media/compass-03.svg" alt="">
+                    <img id="m2" src="media/compass-031.svg" alt="">
+                    <a>Главная</a>
+                </div>
+                <div id="p0" class="option active" onclick="switchpage('portfolio');">
+                    <img id="p1" hidden="true" src="media/briefcase-02.svg" alt="">
+                    <img id="p2" src="media/briefcase-021.svg" alt="">
+                    <a>Портфолио</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main id="swup" class="transition-fade">
+        <div class="m-header">Портфолио</div>
+        <div class="github" onclick="swup.navigate('https://github.com/vard05')">
+            <img src="media/GitHub_Logo.png" alt="">
+        </div>
+    </main>
+</body>
+</html>
