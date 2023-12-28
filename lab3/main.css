@@ -207,12 +207,16 @@ main {
   }
 .github {
     background-color: rgb(119, 111, 139);
-    border-radius: 25px;
-    width: 200px;
+    border-radius: 20px;
+    padding: 6px 0px;    
     text-align: center;
     margin-top: 25px;
     cursor: pointer;
+    transition: all 140ms linear;
+}
+.github:hover {
+    filter: brightness(130%);
 }
 .github img {
-    width: 150px;
+    width: 85px;
 }
